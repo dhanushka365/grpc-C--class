@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package calculator;	//package is a keyword
+
+message sumRequest {//message is a keyword
+	int32 firstNumber = 1;
+	int32 secondNumber = 2;
+}
+
+message sumResponse {
+	int32 sumResult = 1;//sumResult is the name of the field
+}
+
+service CalculatorService {
+	rpc Sum(sumRequest) returns (sumResponse){}//rpc is a keyword
+}
