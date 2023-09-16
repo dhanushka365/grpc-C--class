@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using Greet;
+using Grpc.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +28,11 @@ namespace client
                    
            });
 
-            var client = new Dummy.DummyService.DummyServiceClient(channel);//create a client
+            //var client = new Dummy.DummyService.DummyServiceClient(channel);//create a client
+            var client = new GreetingService.GreetingServiceClient(channel);//create a client
 
+            var response = client.Greet(new GreetingRequest() { Greeting = new Greeting() { FirstName = "John", LastName = "Doe" } });//send a request to the server
+            Console.WriteLine(response.Result);//print the response
             channel.ShutdownAsync().Wait();//wait for the channel to shutdown
             Console.ReadKey();//wait for the user to press a key
         }
