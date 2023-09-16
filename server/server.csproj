@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 	<ItemGroup>
-		<Protobuf Include="../*.proto" OutputDir="%(RelativePath)models/"/>
+		<Protobuf Include="../*.proto" OutputDir="%(RelativePath)models/" />
 	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.24.3" />
@@ -16,6 +16,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="models\" />
   </ItemGroup>
 
 </Project>
