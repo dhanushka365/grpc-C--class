@@ -12,7 +12,7 @@ namespace server
         const int Port = 50051;
         static void Main(string[] args)
         {
-            Server server = null;
+            Server? server = null;
             try
             {
                 server = new Server
