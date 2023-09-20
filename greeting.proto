@@ -26,7 +26,16 @@ message LongGreetResponse{
 	string result =1;
 }
 
+message EveryOneGreetRequest{
+	Greeting greeting =1;
+}
+
+message EveryOneGreetResponse{
+	string result =1;
+}
+
 service GreetingService{
 	rpc Greet(GreetingRequest) returns (GreetingResponse){}	
     rpc LongGreet(stream LongGreetRequest) returns (LongGreetResponse){}
+	rpc GreetEveryOne(stream EveryOneGreetRequest) returns (EveryOneGreetResponse){}
 }
