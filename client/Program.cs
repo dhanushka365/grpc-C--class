@@ -17,7 +17,7 @@ namespace client
 
            await channel.ConnectAsync().ContinueWith((task) =>//connect to the server
            {
-               if (task.Status == TaskStatus.RanToCompletion)
+               if (task.Status == TaskStatus.RanToCompletion)//if the connection was successful
                {
                    Console.WriteLine("The client connected successfully");
                }
